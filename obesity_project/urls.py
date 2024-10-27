@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from predictor import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.predict_obesity, name="predict_obesity"),
+    path('result/', views.obesity_result, name="obesity_result"),
 ]

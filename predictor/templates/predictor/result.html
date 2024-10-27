@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity Prediction Result</title>
+    <link rel="stylesheet" href="{% static 'predictor/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Obesity Prediction Result</h1>
+        <h2>{{ prediction_text }}</h2>
+        <a href="{% url 'predict_obesity' %}">Go Back</a>
+    </div>
+</body>
+</html>

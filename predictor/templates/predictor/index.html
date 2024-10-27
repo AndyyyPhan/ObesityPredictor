@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity Prediction Form</title>
+    <link rel="stylesheet" href="{% static 'predictor/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Obesity Prediction Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="sex">Sex:</label><br>
+            <select id="sex" name="sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" required><br><br>
+
+            <label for="height">Height (cm):</label><br>
+            <input type="number" id="height" name="height" required><br><br>
+
+            <label for="overweight_obese_family">Overweight/Obese Families:</label><br>
+            <select id="overweight_obese_family" name="overweight_obese_family">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="consumption_of_fast_food">Consumption of Fast Food:</label><br>
+            <select id="consumption_of_fast_food" name="consumption_of_fast_food">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="frequency_of_consuming_vegetables">Frequency of Consuming Vegetables:</label><br>
+            <select id="frequency_of_consuming_vegetables" name="frequency_of_consuming_vegetables">
+                <option value="Rarely">Rarely</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="Always">Always</option>
+            </select><br><br>
+
+            <label for="number_of_main_meals_daily">Number of Main Meals Daily:</label><br>
+            <select id="number_of_main_meals_daily" name="number_of_main_meals_daily">
+                <option value="1-2">1-2</option>
+                <option value="3">3</option>
+                <option value="3+">3+</option>
+            </select><br><br>
+
+            <label for="food_intake_between_meals">Food Intake Between Meals:</label><br>
+            <select id="food_intake_between_meals" name="food_intake_between_meals">
+                <option value="Rarely">Rarely</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="Usually">Usually</option>
+                <option value="Always">Always</option>
+            </select><br><br>
+
+            <label for="smoking">Smoking:</label><br>
+            <select id="smoking" name="smoking">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="liquid_intake_daily">Liquid Intake Daily:</label><br>
+            <select id="liquid_intake_daily" name="liquid_intake_daily">
+                <option value="Less than 1 liter">Less than 1 liter</option>
+                <option value="1 to 2 liters">1 to 2 liters</option>
+                <option value="More than 2 liters">More than 2 liters</option>
+            </select><br><br>
+
+            <label for="calculation_of_calorie_intake">Calculation of Calorie Intake:</label><br>
+            <select id="calculation_of_calorie_intake" name="calculation_of_calorie_intake">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <label for="physical_exercise">Physical Exercise:</label><br>
+            <select id="physical_exercise" name="physical_exercise">
+                <option value="No physical activity">No physical activity</option>
+                <option value="1-2 days">1-2 days</option>
+                <option value="3-4 days">3-4 days</option>
+                <option value="5-6 days">5-6 days</option>
+                <option value="6+ days">6+ days</option>
+            </select><br><br>
+
+            <label for="schedule_dedicated_to_technology">Schedule Dedicated to Technology:</label><br>
+            <select id="schedule_dedicated_to_technology" name="schedule_dedicated_to_technology">
+                <option value="0-2 hours">0-2 hours</option>
+                <option value="3-5 hours">3-5 hours</option>
+                <option value=">5 hours">>5 hours</option>
+            </select><br><br>
+
+            <label for="type_of_transportation_used">Type of Transportation Used:</label><br>
+            <select id="type_of_transportation_used" name="type_of_transportation_used">
+                <option value="Automobile">Automobile</option>
+                <option value="Motorbike">Motorbike</option>
+                <option value="Bike">Bike</option>
+                <option value="Public transportation">Public transportation</option>
+                <option value="Walking">Walking</option>
+            </select><br><br>
+
+            <input type="submit" value="Predict Obesity">
+        </form>
+
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
