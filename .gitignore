@@ -1,0 +1,13 @@
+*.pyc
+__pycache__/
+.vscode/
+.idea/
+.env
+*.sqlite3
+obesity_project/ml_model/obesity_predictor.pkl  # Avoid committing large serialized model files
+db.sqlite3  # Database file
+.DS_Store
+/media/
+/staticfiles/
+/static/
+/venv/  # Your virtual environment folder, usually named venv or env
