@@ -22,7 +22,7 @@ class ObesityPredictionForm(forms.Form):
     smoking = forms.ChoiceField(label='Smoking', choices=[('Yes', 'Yes'), ('No', 'No')])
     liquid_intake_daily = forms.ChoiceField(label='Liquid Intake Daily',
                                             choices=[('Less than 1 liter', 'Less than 1 liter'),
-                                                     ('1 to 2 liters', '1 to 2 liters'),
+                                                     ('1-2 liters', '1-2 liters'),
                                                      ('More than 2 liters', 'More than 2 liters')])
     calculation_of_calorie_intake = forms.ChoiceField(label='Calculation of Calorie Intake',
                                                       choices=[('Yes', 'Yes'), ('No', 'No')])

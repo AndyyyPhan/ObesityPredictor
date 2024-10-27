@@ -10,11 +10,8 @@ preprocessor = joblib.load("ml_model/preprocessor.pkl")
 
 def predict_obesity(request):
     if request.method == 'POST':
-        print('test')
         form = ObesityPredictionForm(request.POST)
-        print('test1')
         if form.is_valid():
-            print('test2')
             user_input = [
                 form.cleaned_data['sex'],
                 int(form.cleaned_data['age']),
